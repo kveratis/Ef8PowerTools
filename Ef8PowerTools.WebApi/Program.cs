@@ -1,6 +1,7 @@
 
 using Ef8PowerTools.Data.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 namespace Ef8PowerTools.WebApi
 {
@@ -14,15 +15,18 @@ namespace Ef8PowerTools.WebApi
                 options => options.UseSqlServer(builder.Configuration.GetConnectionString("SummaConnection")));
 
             builder.Services.AddControllers();
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+            
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
             var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
+                var scope = app.Services.CreateScope();
+                var summaContext = scope.ServiceProvider.GetRequiredService<SummaContext>();
+                summaContext.Database.Migrate();
+
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }

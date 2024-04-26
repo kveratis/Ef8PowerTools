@@ -1,0 +1,29 @@
+version: '3.4'
+name: "ef8powertools"
+
+services:
+
+  ef8powertools.sql:
+    container_name: "ef8powertools-sql"
+    image: "mcr.microsoft.com/mssql/server"
+    ports:
+      - "1433:1433"
+    environment:
+      SA_PASSWORD: "Glum-Glam-Rocker-Scrum"
+      ACCEPT_EULA: "Y"
+    volumes:             
+        - ./init:/docker-entrypoint-initdb.d
+    networks:
+      - ef8powertools-network
+
+  ef8powertools.webapi:
+    container_name: "ef8powertools-webapi"
+    image: ${DOCKER_REGISTRY-}ef8powertoolswebapi
+    build:
+      context: .
+      dockerfile: Ef8PowerTools.WebApi/Dockerfile
+    networks:
+      - ef8powertools-network
+
+networks:
+  ef8powertools-network:
