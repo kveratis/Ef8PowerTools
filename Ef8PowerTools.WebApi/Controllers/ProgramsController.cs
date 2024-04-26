@@ -41,7 +41,7 @@ namespace Ef8PowerTools.WebApi.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutProgram(int id, Data.Models.Program program)
         {
-            if (id != program.ProgramId)
+            if (id != program.Id)
             {
                 return BadRequest();
             }
@@ -79,7 +79,7 @@ namespace Ef8PowerTools.WebApi.Controllers
             }
             catch (DbUpdateException)
             {
-                if (ProgramExists(program.ProgramId))
+                if (ProgramExists(program.Id))
                 {
                     return Conflict();
                 }
@@ -89,7 +89,7 @@ namespace Ef8PowerTools.WebApi.Controllers
                 }
             }
 
-            return CreatedAtAction("GetProgram", new { id = program.ProgramId }, program);
+            return CreatedAtAction("GetProgram", new { id = program.Id }, program);
         }
 
         // DELETE: api/Programs/5
@@ -110,7 +110,7 @@ namespace Ef8PowerTools.WebApi.Controllers
 
         private bool ProgramExists(int id)
         {
-            return _context.Programs.Any(e => e.ProgramId == id);
+            return _context.Programs.Any(e => e.Id == id);
         }
     }
 }

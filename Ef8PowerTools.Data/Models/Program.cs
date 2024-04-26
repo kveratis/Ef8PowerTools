@@ -7,7 +7,7 @@ namespace Ef8PowerTools.Data.Models;
 
 public partial class Program
 {
-    public int ProgramId { get; set; }
+    public int Id { get; set; }
 
     public string ProgramName { get; set; }
 

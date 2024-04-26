@@ -4,6 +4,7 @@ using Ef8PowerTools.Data.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Ef8PowerTools.Data.Migrations
 {
     [DbContext(typeof(SummaContext))]
-    partial class SummaContextModelSnapshot : ModelSnapshot
+    [Migration("20240426005105_CARD-1234_ChangeIdColumnOnProgramTable")]
+    partial class CARD1234_ChangeIdColumnOnProgramTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

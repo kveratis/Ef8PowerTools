@@ -11,9 +11,9 @@ namespace Ef8PowerTools.Data.Models.Configurations
     {
         public void Configure(EntityTypeBuilder<Program> entity)
         {
-            entity.Property(e => e.ProgramId)
+            entity.Property(e => e.Id)
                 .ValueGeneratedNever()
-                .HasColumnName("ProgramID");
+                .HasColumnName("Id");
             entity.Property(e => e.Active).HasDefaultValue(true);
             entity.Property(e => e.ClientApplicationName)
                 .HasMaxLength(50)
