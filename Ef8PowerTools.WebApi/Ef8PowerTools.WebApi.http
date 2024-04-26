@@ -1,6 +1,126 @@
-@Ef8PowerTools.WebApi_HostAddress = http://localhost:5229
+@Ef8PowerTools.WebApi_HostAddress = http://localhost:8080
 
-GET {{Ef8PowerTools.WebApi_HostAddress}}/weatherforecast/
+POST {{Ef8PowerTools.WebApi_HostAddress}}/api/Programs
+Accept: application/json
+Content-Type: application/json
+
+{
+    "Id": 236,
+    "programName": "eBV Offramp OFFROAD OFFKILTER OFFTHECHAIN!",
+    "manufacturerId": 235,
+    "manufacturerName": "xxx",
+    "mdmprogramId": 235,
+    "active": true,
+    "activeDate": "2020-01-23",
+    "maxCopayAmount": null,
+    "copayType": null,
+    "copayPeriodDays": null,
+    "sharedRecordProgramId": null,
+    "defaultProgram": null,
+    "manufacturerApplicationName": null,
+    "layoutType": null,
+    "manuPortalConfigDb": null,
+    "displayScientificDrugName": null,
+    "copayGroupId": null,
+    "hcpapplicationName": null,
+    "clientApplicationName": "eBVOfframpConnect",
+    "contacts": [],
+    "dashboardPanelPrograms": [],
+    "dashboardPanelUserSettings": [],
+    "dataConfigurations": [],
+    "documentsFaxQueues": [],
+    "eServicesProgramConfigs": [],
+    "feedbackConfigurations": [],
+    "organizationAddresses": [],
+    "organizationNpis": [],
+    "organizationPhoneNumbers": [],
+    "organizationTaxIds": [],
+    "organizations": [],
+    "patientAddresses": [],
+    "patientPhoneNumbers": [],
+    "patientStatusProgramLists": [],
+    "physicianPhoneNumbers": [],
+    "physicians": [],
+    "programUrls": [],
+    "programVendors": [],
+    "reportPrograms": [],
+    "rxAdminDoses": [],
+    "serviceRequests": [],
+    "srOrderDetails": [],
+    "srPappaymentSchedules": [],
+    "srPappayments": [],
+    "srPapscheduledPayments": [],
+    "srTriages": [],
+    "srhubStatusSrtypeLists": [],
+    "userAccessFunctionLists": [],
+    "userPrograms": [],
+    "userRoleDefaults": [],
+    "userRoleLists": []
+}
+
+###
+
+PUT {{Ef8PowerTools.WebApi_HostAddress}}/api/Programs/236
+Accept: application/json
+Content-Type: application/json
+
+{
+    "Id": 236,
+    "programName": "NEW NAME HERE YAY!",
+    "manufacturerId": 235,
+    "manufacturerName": "xxx",
+    "mdmprogramId": 235,
+    "active": true,
+    "activeDate": "2020-01-23",
+    "maxCopayAmount": null,
+    "copayType": null,
+    "copayPeriodDays": null,
+    "sharedRecordProgramId": null,
+    "defaultProgram": null,
+    "manufacturerApplicationName": null,
+    "layoutType": null,
+    "manuPortalConfigDb": null,
+    "displayScientificDrugName": null,
+    "copayGroupId": null,
+    "hcpapplicationName": null,
+    "clientApplicationName": "eBVOfframpConnect",
+    "contacts": [],
+    "dashboardPanelPrograms": [],
+    "dashboardPanelUserSettings": [],
+    "dataConfigurations": [],
+    "documentsFaxQueues": [],
+    "eServicesProgramConfigs": [],
+    "feedbackConfigurations": [],
+    "organizationAddresses": [],
+    "organizationNpis": [],
+    "organizationPhoneNumbers": [],
+    "organizationTaxIds": [],
+    "organizations": [],
+    "patientAddresses": [],
+    "patientPhoneNumbers": [],
+    "patientStatusProgramLists": [],
+    "physicianPhoneNumbers": [],
+    "physicians": [],
+    "programUrls": [],
+    "programVendors": [],
+    "reportPrograms": [],
+    "rxAdminDoses": [],
+    "serviceRequests": [],
+    "srOrderDetails": [],
+    "srPappaymentSchedules": [],
+    "srPappayments": [],
+    "srPapscheduledPayments": [],
+    "srTriages": [],
+    "srhubStatusSrtypeLists": [],
+    "userAccessFunctionLists": [],
+    "userPrograms": [],
+    "userRoleDefaults": [],
+    "userRoleLists": []
+}
+
+###
+
+GET {{Ef8PowerTools.WebApi_HostAddress}}/api/Programs/
 Accept: application/json
 
 ###
